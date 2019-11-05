@@ -30,9 +30,17 @@ public class PresentationBeanPropertyChangeListenerExample extends JPanel {
     defaultFormBuilder.append("First Name: ", firstNameTextField);
     defaultFormBuilder.append("Last Name: ", lastNameTextField);
 
-    defaultFormBuilder.append(new JButton(new ConvertValueToUpperCaseAction(personBean)), 3);
-    defaultFormBuilder.append(new JButton(new ConvertValueToLowerCaseAction(personBean)), 3);
-    defaultFormBuilder.append(new JButton(new ShowValueHolderValueAction(personBean)), 3);
+    JButton toUpperBtn = new JButton("Convert Value To UpperCase");
+    toUpperBtn.addActionListener(new ConvertValueToUpperCaseAction(personBean));
+    defaultFormBuilder.append(toUpperBtn, 3);
+
+    JButton toLowerBtn = new JButton("Convert Value To LowerCase");
+    toLowerBtn.addActionListener(new ConvertValueToLowerCaseAction(personBean));
+    defaultFormBuilder.append(toLowerBtn, 3);
+
+    JButton showBtn = new JButton("Show Value");
+    showBtn.addActionListener(new ShowValueHolderValueAction(personBean));
+    defaultFormBuilder.append(showBtn, 3);
 
     add(defaultFormBuilder.getPanel());
   }
