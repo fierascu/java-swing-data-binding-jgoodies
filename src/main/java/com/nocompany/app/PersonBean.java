@@ -3,22 +3,22 @@ package com.nocompany.app;
 import com.jgoodies.binding.beans.Model;
 
 public class PersonBean extends Model {
+  // NOTE: need the class and getters to be public because of error:
+  // Caused by: java.beans.IntrospectionException: Property 'firstName' not found in bean class com.nocompany.app.PersonBean
 
   private String firstName;
 
   private String lastName;
 
-  public static final String FIRST_NAME_PROPERTY = "firstName";
+  private static final String FIRST_NAME_PROPERTY = "firstName";
 
-  public static final String LAST_NAME_PROPERTY = "lastName";
+  private static final String LAST_NAME_PROPERTY = "lastName";
 
-  public PersonBean(String firstName, String lastName) {
+  PersonBean(String firstName, String lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
 
-  // NOTE: need the getters to be public because of error:
-  // Caused by: java.beans.IntrospectionException: Property 'firstName' not found in bean class com.nocompany.app.PersonBean
   public String getFirstName() {
     return firstName;
   }

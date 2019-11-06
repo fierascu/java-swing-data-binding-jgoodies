@@ -10,16 +10,15 @@ import com.jgoodies.binding.value.ValueModel;
 import com.jgoodies.forms.builder.DefaultFormBuilder;
 import com.jgoodies.forms.layout.FormLayout;
 
-public class PresentationBeanPropertyChangeListenerExample extends JPanel {
-  private PersonBean personBean;
+class PresentationBeanPropertyChangeListenerExample extends JPanel {
 
-  public PresentationBeanPropertyChangeListenerExample() {
+  PresentationBeanPropertyChangeListenerExample() {
     DefaultFormBuilder defaultFormBuilder = new DefaultFormBuilder(new FormLayout("p, 2dlu, p:g"));
     defaultFormBuilder.setDefaultDialogBorder();
 
-    personBean = new PersonBean("Scott", "Delap");
+    PersonBean personBean = new PersonBean("Scott", "Delap");
 
-    PresentationModel presentationModel = new PresentationModel(personBean);
+    PresentationModel<PersonBean> presentationModel = new PresentationModel<>(personBean);
     presentationModel.addBeanPropertyChangeListener(new NotifyingPropertyChangeListener());
     ValueModel firstNameAdapter = presentationModel.getModel("firstName");
     ValueModel lastNameAdapter = presentationModel.getModel("lastName");

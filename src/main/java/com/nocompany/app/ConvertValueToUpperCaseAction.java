@@ -6,15 +6,14 @@ import javax.swing.AbstractAction;
 
 public class ConvertValueToUpperCaseAction extends AbstractAction {
 
-  private final PersonBean otherPersonBean;
+  private final PersonBean personBean;
 
-  public ConvertValueToUpperCaseAction(PersonBean otherPersonBean) {
-    super("Convert Value To UpperCase");
-    this.otherPersonBean = otherPersonBean;
+  public ConvertValueToUpperCaseAction(PersonBean personBean) {
+    this.personBean = personBean;
   }
 
   public void actionPerformed(ActionEvent event) {
-    otherPersonBean.setFirstName(otherPersonBean.getFirstName().toUpperCase());
-    otherPersonBean.setLastName(otherPersonBean.getLastName().toUpperCase());
+    personBean.setFirstName(personBean.getFirstName().toUpperCase());
+    personBean.setLastName(personBean.getLastName().toUpperCase());
   }
 }

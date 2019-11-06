@@ -6,15 +6,14 @@ import javax.swing.AbstractAction;
 
 public class ConvertValueToLowerCaseAction extends AbstractAction {
 
-  private final PersonBean otherPersonBean;
+  private final PersonBean personBean;
 
-  public ConvertValueToLowerCaseAction(PersonBean otherPersonBean) {
-    super("Convert Value To LowerCase");
-    this.otherPersonBean = otherPersonBean;
+  public ConvertValueToLowerCaseAction(PersonBean personBean) {
+    this.personBean = personBean;
   }
 
   public void actionPerformed(ActionEvent event) {
-    otherPersonBean.setFirstName(otherPersonBean.getFirstName().toLowerCase());
-    otherPersonBean.setLastName(otherPersonBean.getLastName().toLowerCase());
+    personBean.setFirstName(personBean.getFirstName().toLowerCase());
+    personBean.setLastName(personBean.getLastName().toLowerCase());
   }
 }
