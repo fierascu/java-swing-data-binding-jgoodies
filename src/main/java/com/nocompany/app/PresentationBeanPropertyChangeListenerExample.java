@@ -8,13 +8,14 @@ import com.jgoodies.binding.PresentationModel;
 import com.jgoodies.binding.adapter.BasicComponentFactory;
 import com.jgoodies.binding.value.ValueModel;
 import com.jgoodies.forms.builder.DefaultFormBuilder;
+import com.jgoodies.forms.factories.Borders;
 import com.jgoodies.forms.layout.FormLayout;
 
 class PresentationBeanPropertyChangeListenerExample extends JPanel {
 
   PresentationBeanPropertyChangeListenerExample() {
-    DefaultFormBuilder defaultFormBuilder = new DefaultFormBuilder(new FormLayout("p, 2dlu, p:g"));
-    defaultFormBuilder.setDefaultDialogBorder();
+    DefaultFormBuilder defaultFormBuilder =
+        new DefaultFormBuilder(new FormLayout("p, 2dlu, p:g")).border(Borders.DIALOG);
 
     PersonBean personBean = new PersonBean("Scott", "Delap");
 
